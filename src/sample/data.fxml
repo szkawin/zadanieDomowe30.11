@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DataController">
+   <center>
+      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="surname" prefWidth="75.0" text="Surname" />
+            <TableColumn fx:id="pesel" prefWidth="75.0" text="PESEL" />
+            <TableColumn fx:id="wiek" prefWidth="75.0" text="Age" />
+            <TableColumn fx:id="wzrost" prefWidth="75.0" text="Height" />
+            <TableColumn fx:id="kasuj" prefWidth="75.0" text="Kasuj" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <SplitPane fx:id="dodawanieLudzika" dividerPositions="0.6755852842809364" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <GridPane fx:id="naprawdeDodawanieLudzika" alignment="CENTER" layoutX="52.0" layoutY="23.0" prefHeight="158.0" prefWidth="401.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+
+                    </rowConstraints>
+                     <children>
+                         <Label fx:id="labelName" text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                         <TextField fx:id="textfieldName" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                         <Label fx:id="labelSurname" text="Surname" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                         <TextField fx:id="textfieldSurname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                         <Label fx:id="labelPESEL" text="PESEL" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                         <TextField fx:id="textfieldPESEL" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                         <Label fx:id="labelWzrost" text="Height" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                         <TextField fx:id="textfieldWzrost" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="buttonDodaj" layoutX="70.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDodaj" text="Dodaj" />
+                  <Button fx:id="wyliczStaty" layoutX="44.0" layoutY="79.0" mnemonicParsing="false" onAction="#wyliczacz" text="Wylicz statystyki" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </bottom>
+</BorderPane>
